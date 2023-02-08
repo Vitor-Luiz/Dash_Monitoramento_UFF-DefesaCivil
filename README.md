@@ -6,7 +6,8 @@ A implantação do Dash é executada pelo Elastic Beanstalk por meio da free tie
 
 http://dashmonitoramentouff-env.eba-csrm9z2j.sa-east-1.elasticbeanstalk.com/
 
-Monitoring Dash
+Monitoring Dash!
+
 This code has the purpose of creating a Dash for real-time monitoring of acceleration, temperature and humidity at 3 depths sensors. According to real-time sensor values, an alarm signal is issued on the platform. Project under development through Scientific Initiation by Fluminense Federal University (UFF).
 
 Dash deployment is performed by Elastic Beanstalk through Amazon's AWS free tier.
