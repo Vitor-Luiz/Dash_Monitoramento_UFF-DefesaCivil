@@ -77,7 +77,17 @@ def grafico_df_mapa(alerta_df):
     df_Jurujuba_L1 = of.importa_df("https://thingspeak.com/channels/609692/")
     df_Jurujuba_L2 = of.importa_df("https://thingspeak.com/channels/1962134/")
     df_Jurujuba_L3 = of.importa_df("https://thingspeak.com/channels/1962136/")
-
+    #Mais 10 locais de sensores
+    df_Local_1 = of.importa_df("https://thingspeak.com/channels/1962136/")
+    df_Local_2 = of.importa_df("https://thingspeak.com/channels/1962136/")
+    df_Local_3 = of.importa_df("https://thingspeak.com/channels/1962136/")
+    df_Local_4 = of.importa_df("https://thingspeak.com/channels/1962136/")
+    df_Local_5 = of.importa_df("https://thingspeak.com/channels/1962136/")
+    df_Local_6 = of.importa_df("https://thingspeak.com/channels/1962136/")
+    df_Local_7 = of.importa_df("https://thingspeak.com/channels/1962136/")
+    df_Local_8 = of.importa_df("https://thingspeak.com/channels/1962136/")
+    df_Local_9 = of.importa_df("https://thingspeak.com/channels/1962136/")
+    df_Local_10 = of.importa_df("https://thingspeak.com/channels/1962136/")
     #Executa os alarmes
     #Definir Alarmes
     # HEX COLORS
@@ -89,32 +99,94 @@ def grafico_df_mapa(alerta_df):
     #Alarmes UFF
     # Alarme ACeT 
     # Alarme U123
-    alarmeUFF_U123 = of.alarme_U123(df_UFF, 30, 10, -10, "Umidade3")
+    alarmeUFF_U123 = of.alarme_U123(df_UFF, 30, 10, -6, "Umidade3")
 
     #Alarmes Jurujuba L1
     # Alarme ACeT 
     # Alarme U123
-    alarmeJL1_U123 = of.alarme_U123(df_Jurujuba_L1, 30, 10, -10, "Umidade3")
+    alarmeJL1_U123 = of.alarme_U123(df_Jurujuba_L1, 30, 10, -6, "Umidade3")
 
     #Alarmes Jurujuba L2
     # Alarme ACeT 
     # Alarme U123
-    alarmeJL2_U123 = of.alarme_U123(df_Jurujuba_L2, 30, 10, -10, "Umidade3")
+    alarmeJL2_U123 = of.alarme_U123(df_Jurujuba_L2, 30, 10, -6, "Umidade3")
 
     #Alarmes Jurujuba L3
     # Alarme ACeT 
     # Alarme U123
-    alarmeJL3_U123 = of.alarme_U123(df_Jurujuba_L3, 30, 10, -10, "Umidade3")
+    alarmeJL3_U123 = of.alarme_U123(df_Jurujuba_L3, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local1
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL1_U123 = of.alarme_U123(df_Local_1, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local2
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL2_U123 = of.alarme_U123(df_Local_2, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local3
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL3_U123 = of.alarme_U123(df_Local_3, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local4
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL4_U123 = of.alarme_U123(df_Local_4, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local5
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL5_U123 = of.alarme_U123(df_Local_5, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local6
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL6_U123 = of.alarme_U123(df_Local_6, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local7
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL7_U123 = of.alarme_U123(df_Local_7, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local8
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL8_U123 = of.alarme_U123(df_Local_8, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local9
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL9_U123 = of.alarme_U123(df_Local_9, 30, 10, -6, "Umidade3")
+
+    #Alarmes Local10
+    # Alarme ACeT 
+    # Alarme U123
+    alarmeL10_U123 = of.alarme_U123(df_Local_10, 30, 10, -6, "Umidade3")
 
     fig_mapa = px.scatter_mapbox(alerta_df, lat="latitude", lon="longitude", zoom=(int(11)),
-                                 size_max=(int(12)), size=[6, 6, 6, 6, 6, 6, 6, 6],
+                                 size_max=(int(12)), 
+                                 size=[6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
                                  center={"lat": -22.898979, "lon": -43.039131},
-                                 color="Sinais de Alerta", opacity=[1, 0.7, 1, 0.7, 1, 0.7, 1, 0.7],
+                                 color="Sinais de Alerta", 
+                                 opacity=[1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7],
                                  #       text=["UFF","Jurujuba 1", "Jurujuba 2"],
                                  color_discrete_map={"UFF ACeT": teste, "UFF U123": alarmeUFF_U123,
                                                      "Jurujuba1 ACeT": teste2, "Jurujuba1 U123": alarmeJL1_U123,
                                                      "Jurujuba2 ACeT": teste1, "Jurujuba2 U123": alarmeJL2_U123,
-                                                     "Jurujuba3 ACeT": teste, "Jurujuba U123": alarmeJL3_U123})
+                                                     "Jurujuba3 ACeT": teste, "Jurujuba3 U123": alarmeJL3_U123,
+                                                     "Local1 ACeT": teste1, "Local1 U123": alarmeL1_U123,
+                                                     "Local2 ACeT": teste2, "Local2 U123": alarmeL2_U123,
+                                                     "Local3 ACeT": teste3, "Local3 U123": alarmeL3_U123,
+                                                     "Local4 ACeT": teste1, "Local4 U123": alarmeL4_U123,
+                                                     "Local5 ACeT": teste2, "Local5 U123": alarmeL5_U123,
+                                                     "Local6 ACeT": teste3, "Local6 U123": alarmeL6_U123,
+                                                     "Local7 ACeT": teste1, "Local7 U123": alarmeL7_U123,
+                                                     "Local8 ACeT": teste2, "Local8 U123": alarmeL8_U123,
+                                                     "Local9 ACeT": teste3, "Local9 U123": alarmeL9_U123,
+                                                     "Local10 ACeT": teste, "Local10 U123": alarmeL10_U123})
 
     fig_mapa.update_layout(mapbox_style="stamen-terrain")
 
