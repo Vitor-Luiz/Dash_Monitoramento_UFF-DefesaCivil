@@ -25,71 +25,85 @@ df_Local_10 = of.importa_df("https://thingspeak.com/channels/1962136/")
 #Alarmes UFF
 # Alarme ACeT 
 # Alarme U123
-alarmeUFF_U123 = of.alarme_U123(df_UFF, 30, 10, -10, "Umidade3")
+alarmeUFF_ACeT = of.alarme_ACeT(df_UFF)
+alarmeUFF_U123 = of.alarme_U123(df_UFF, 30, 10, -6, "Umidade3")
 
 #Alarmes Jurujuba L1
 # Alarme ACeT 
 # Alarme U123
-alarmeJL1_U123 = of.alarme_U123(df_Jurujuba_L1, 30, 10, -10, "Umidade3")
+alarmeJL1_ACeT = of.alarme_ACeT(df_Jurujuba_L1)
+alarmeJL1_U123 = of.alarme_U123(df_Jurujuba_L1, 30, 10, -6, "Umidade3")
 
 #Alarmes Jurujuba L2
 # Alarme ACeT 
 # Alarme U123
-alarmeJL2_U123 = of.alarme_U123(df_Jurujuba_L2, 30, 10, -10, "Umidade3")
+alarmeJL2_ACeT = of.alarme_ACeT(df_Jurujuba_L2)
+alarmeJL2_U123 = of.alarme_U123(df_Jurujuba_L2, 30, 10, -6, "Umidade3")
 
 #Alarmes Jurujuba L3
 # Alarme ACeT 
 # Alarme U123
-alarmeJL3_U123 = of.alarme_U123(df_Jurujuba_L3, 30, 10, -10, "Umidade3")
+alarmeJL3_ACeT = of.alarme_ACeT(df_Jurujuba_L3)
+alarmeJL3_U123 = of.alarme_U123(df_Jurujuba_L3, 30, 10, -6, "Umidade3")
 
 #Alarmes Local1
 # Alarme ACeT 
 # Alarme U123
+alarmeL1_ACeT = of.alarme_ACeT(df_Local_1)
 alarmeL1_U123 = of.alarme_U123(df_Local_1, 30, 10, -6, "Umidade3")
 
 #Alarmes Local2
 # Alarme ACeT 
 # Alarme U123
+alarmeL2_ACeT = of.alarme_ACeT(df_Local_2)
 alarmeL2_U123 = of.alarme_U123(df_Local_2, 30, 10, -6, "Umidade3")
 
 #Alarmes Local3
 # Alarme ACeT 
 # Alarme U123
+alarmeL3_ACeT = of.alarme_ACeT(df_Local_3)
 alarmeL3_U123 = of.alarme_U123(df_Local_3, 30, 10, -6, "Umidade3")
 
 #Alarmes Local4
 # Alarme ACeT 
 # Alarme U123
+alarmeL4_ACeT = of.alarme_ACeT(df_Local_4)
 alarmeL4_U123 = of.alarme_U123(df_Local_4, 30, 10, -6, "Umidade3")
 
 #Alarmes Local5
 # Alarme ACeT 
 # Alarme U123
+alarmeL5_ACeT = of.alarme_ACeT(df_Local_5)
 alarmeL5_U123 = of.alarme_U123(df_Local_5, 30, 10, -6, "Umidade3")
 
 #Alarmes Local6
 # Alarme ACeT 
 # Alarme U123
+alarmeL6_ACeT = of.alarme_ACeT(df_Local_6)
 alarmeL6_U123 = of.alarme_U123(df_Local_6, 30, 10, -6, "Umidade3")
 
 #Alarmes Local7
 # Alarme ACeT 
 # Alarme U123
+alarmeL7_ACeT = of.alarme_ACeT(df_Local_7)
 alarmeL7_U123 = of.alarme_U123(df_Local_7, 30, 10, -6, "Umidade3")
 
 #Alarmes Local8
 # Alarme ACeT 
 # Alarme U123
+alarmeL8_ACeT = of.alarme_ACeT(df_Local_8)
 alarmeL8_U123 = of.alarme_U123(df_Local_8, 30, 10, -6, "Umidade3")
 
 #Alarmes Local9
 # Alarme ACeT 
 # Alarme U123
+alarmeL9_ACeT = of.alarme_ACeT(df_Local_9)
 alarmeL9_U123 = of.alarme_U123(df_Local_9, 30, 10, -6, "Umidade3")
 
 #Alarmes Local10
 # Alarme ACeT 
 # Alarme U123
+alarmeL10_ACeT = of.alarme_ACeT(df_Local_10)
 alarmeL10_U123 = of.alarme_U123(df_Local_10, 30, 10, -6, "Umidade3")
 
 # HEX COLORS
@@ -153,8 +167,8 @@ layout = html.Div([
         html.Div([
             html.H3('UFF_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='UFF_ACeT', figure=figuraUFF_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_UFF_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_UFF_ACeT', label=x, value=True, size=40, color=alarmeUFF_ACeT)],
+                    style={"color": alarmeUFF_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_UFF_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -171,8 +185,8 @@ layout = html.Div([
         html.Div([
             html.H3('JurujubaL1_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='JurujubaL1_ACeT', figure=figuraJL1_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_JurujubaL1_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_JurujubaL1_ACeT', label=x, value=True, size=40, color=alarmeJL1_ACeT)],
+                    style={"color": alarmeJL1_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_JurujubaL1_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -189,8 +203,8 @@ layout = html.Div([
         html.Div([
             html.H3('JurujubaL2_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='JurujubaL2_ACeT', figure=figuraJL2_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_JurujubaL2_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_JurujubaL2_ACeT', label=x, value=True, size=40, color=alarmeJL2_ACeT)],
+                    style={"color": alarmeJL2_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_JurujubaL2_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -207,8 +221,8 @@ layout = html.Div([
         html.Div([
             html.H3('JurujubaL3_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='JurujubaL3_ACeT', figure=figuraJL3_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_JurujubaL3_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_JurujubaL3_ACeT', label=x, value=True, size=40, color=alarmeJL3_ACeT)],
+                    style={"color": alarmeJL3_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_JurujubaL3_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -225,8 +239,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local1_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local1_ACeT', figure=figuraL1_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local1_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local1_ACeT', label=x, value=True, size=40, color=alarmeL1_ACeT)],
+                    style={"color": alarmeL1_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local1_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -243,8 +257,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local2_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local2_ACeT', figure=figuraL2_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local2_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local2_ACeT', label=x, value=True, size=40, color=alarmeL2_ACeT)],
+                    style={"color": alarmeL2_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local2_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -261,8 +275,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local3_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local3_ACeT', figure=figuraL3_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local3_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local3_ACeT', label=x, value=True, size=40, color=alarmeL3_ACeT)],
+                    style={"color": alarmeL3_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local3_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -279,8 +293,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local4_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local4_ACeT', figure=figuraL4_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local4_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local4_ACeT', label=x, value=True, size=40, color=alarmeL4_ACeT)],
+                    style={"color": alarmeL4_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local4_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -297,8 +311,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local5_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local5_ACeT', figure=figuraL5_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local5_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local5_ACeT', label=x, value=True, size=40, color=alarmeL5_ACeT)],
+                    style={"color": alarmeL5_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local5_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -315,8 +329,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local6_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local6_ACeT', figure=figuraL6_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local6_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local6_ACeT', label=x, value=True, size=40, color=alarmeL6_ACeT)],
+                    style={"color": alarmeL6_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local6_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -333,8 +347,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local7_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local7_ACeT', figure=figuraL7_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local7_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local7_ACeT', label=x, value=True, size=40, color=alarmeL7_ACeT)],
+                    style={"color": alarmeL7_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local7_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -351,8 +365,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local8_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local8_ACeT', figure=figuraL8_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local8_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local8_ACeT', label=x, value=True, size=40, color=alarmeL8_ACeT)],
+                    style={"color": alarmeL8_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local8_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -369,8 +383,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local9_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local9_ACeT', figure=figuraL9_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local9_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local9_ACeT', label=x, value=True, size=40, color=alarmeL9_ACeT)],
+                    style={"color": alarmeL9_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local9_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -387,8 +401,8 @@ layout = html.Div([
         html.Div([
             html.H3('Local10_ACeT', style={"color": "#0039a6", "text-align": "center"}),
             dcc.Graph(id='Local10_ACeT', figure=figuraL10_ACeT, className="teste"),
-            html.H2(children=[daq.Indicator(id='alarme_Local10_ACeT', label=x, value=True, size=40, color=teste1)],
-                    style={"color": teste1, "text-align": "center"}),
+            html.H2(children=[daq.Indicator(id='alarme_Local10_ACeT', label=x, value=True, size=40, color=alarmeL10_ACeT)],
+                    style={"color": alarmeL10_ACeT, "text-align": "center"}),
             dcc.Interval(id='interval-component_Local10_ACeT', interval=1 * 180000, n_intervals=0)
         ], className='six columns'),
 
@@ -417,11 +431,8 @@ def update_xyz_temperatura(n):
           Input('interval-component_UFF_ACeT', 'n_intervals'))
 def funcao_alarme1(n):
     df_UFF = of.importa_df("https://thingspeak.com/channels/1670099/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeUFF_ACeT = of.alarme_ACeT(df_UFF)
+    return alarmeUFF_ACeT
 
 # (3) ATUALIZAÇÃO DO do gráfico U123 UFF
 @callback(Output('UFF_U123', 'figure'),
@@ -454,11 +465,8 @@ def update_xyz_temperatura2(n):
           Input('interval-component_JurujubaL1_ACeT', 'n_intervals'))
 def funcao_alarme3(n):
     df_Jurujuba_L1 = of.importa_df("https://thingspeak.com/channels/609692/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeJL1_ACeT = of.alarme_ACeT(df_Jurujuba_L1)
+    return alarmeJL1_ACeT
 
 # (7) ATUALIZAÇÃO DO do gráfico U123 JURUJUBA1
 @callback(Output('JurujubaL1_U123', 'figure'),
@@ -491,11 +499,8 @@ def update_xyz_temperatura3(n):
           Input('interval-component_JurujubaL2_ACeT', 'n_intervals'))
 def funcao_alarme5(n):
     df_Jurujuba_L2 = of.importa_df("https://thingspeak.com/channels/1962134/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeJL2_ACeT = of.alarme_ACeT(df_Jurujuba_L2)
+    return alarmeJL2_ACeT
 
 # (11) ATUALIZAÇÃO DO do gráfico U123 JURUJUBA2
 @callback(Output('JurujubaL2_U123', 'figure'),
@@ -527,11 +532,8 @@ def update_xyz_temperatura4(n):
           Input('interval-component_JurujubaL3_ACeT', 'n_intervals'))
 def funcao_alarme7(n):
     df_Jurujuba_L3 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeJL3_ACeT = of.alarme_ACeT(df_Jurujuba_L3)
+    return alarmeJL3_ACeT
 
 # (15) ATUALIZAÇÃO DO do gráfico U123 JURUJUBA3
 @callback(Output('JurujubaL3_U123', 'figure'),
@@ -563,11 +565,8 @@ def update_xyz_temperatura5(n):
           Input('interval-component_Local1_ACeT', 'n_intervals'))
 def funcao_alarme9(n):
     df_Local_1 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL1_ACeT = of.alarme_ACeT(df_Local_1)
+    return alarmeL1_ACeT
 
 # (19) ATUALIZAÇÃO DO do gráfico U123 LOCAL1
 @callback(Output('Local1_U123', 'figure'),
@@ -599,11 +598,8 @@ def update_xyz_temperatura6(n):
           Input('interval-component_Local2_ACeT', 'n_intervals'))
 def funcao_alarme11(n):
     df_Local_2 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL2_ACeT = of.alarme_ACeT(df_Local_2)
+    return alarmeL2_ACeT
 
 # (23) ATUALIZAÇÃO DO do gráfico U123 LOCAL2
 @callback(Output('Local2_U123', 'figure'),
@@ -635,11 +631,8 @@ def update_xyz_temperatura7(n):
           Input('interval-component_Local3_ACeT', 'n_intervals'))
 def funcao_alarme13(n):
     df_Local_3 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL3_ACeT = of.alarme_ACeT(df_Local_3)
+    return alarmeL3_ACeT
 
 # (27) ATUALIZAÇÃO DO do gráfico U123 LOCAL3
 @callback(Output('Local3_U123', 'figure'),
@@ -671,11 +664,8 @@ def update_xyz_temperatura8(n):
           Input('interval-component_Local4_ACeT', 'n_intervals'))
 def funcao_alarme15(n):
     df_Local_4 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL4_ACeT = of.alarme_ACeT(df_Local_4)
+    return alarmeL4_ACeT
 
 # (31) ATUALIZAÇÃO DO do gráfico U123 LOCAL4
 @callback(Output('Local4_U123', 'figure'),
@@ -707,11 +697,8 @@ def update_xyz_temperatura9(n):
           Input('interval-component_Local5_ACeT', 'n_intervals'))
 def funcao_alarme17(n):
     df_Local_5 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL5_ACeT = of.alarme_ACeT(df_Local_5)
+    return alarmeL5_ACeT
 
 # (35) ATUALIZAÇÃO DO do gráfico U123 LOCAL5
 @callback(Output('Local5_U123', 'figure'),
@@ -743,11 +730,8 @@ def update_xyz_temperatura10(n):
           Input('interval-component_Local6_ACeT', 'n_intervals'))
 def funcao_alarme19(n):
     df_Local_6 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL6_ACeT = of.alarme_ACeT(df_Local_6)
+    return alarmeL6_ACeT
 
 # (39) ATUALIZAÇÃO DO do gráfico U123 LOCAL6
 @callback(Output('Local6_U123', 'figure'),
@@ -779,11 +763,8 @@ def update_xyz_temperatura11(n):
           Input('interval-component_Local7_ACeT', 'n_intervals'))
 def funcao_alarme21(n):
     df_Local_7 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL7_ACeT = of.alarme_ACeT(df_Local_7)
+    return alarmeL7_ACeT
 
 # (43) ATUALIZAÇÃO DO do gráfico U123 LOCAL7
 @callback(Output('Local7_U123', 'figure'),
@@ -815,11 +796,8 @@ def update_xyz_temperatura12(n):
           Input('interval-component_Local8_ACeT', 'n_intervals'))
 def funcao_alarme23(n):
     df_Local_8 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL8_ACeT = of.alarme_ACeT(df_Local_8)
+    return alarmeL8_ACeT
 
 # (47) ATUALIZAÇÃO DO do gráfico U123 LOCAL8
 @callback(Output('Local8_U123', 'figure'),
@@ -851,11 +829,8 @@ def update_xyz_temperatura13(n):
           Input('interval-component_Local9_ACeT', 'n_intervals'))
 def funcao_alarme25(n):
     df_Local_9 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL9_ACeT = of.alarme_ACeT(df_Local_9)
+    return alarmeL9_ACeT
 
 # (51) ATUALIZAÇÃO DO do gráfico U123 LOCAL9
 @callback(Output('Local9_U123', 'figure'),
@@ -887,11 +862,8 @@ def update_xyz_temperatura14(n):
           Input('interval-component_Local10_ACeT', 'n_intervals'))
 def funcao_alarme27(n):
     df_Local_10 = of.importa_df("https://thingspeak.com/channels/1962136/")
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
-    return teste
+    alarmeL10_ACeT = of.alarme_ACeT(df_Local_10)
+    return alarmeL10_ACeT
 
 # (55) ATUALIZAÇÃO DO do gráfico U123 LOCAL10
 @callback(Output('Local10_U123', 'figure'),

@@ -92,78 +92,92 @@ def grafico_df_mapa(alerta_df):
     #Definir Alarmes
     # HEX COLORS
     # https://htmlcolorcodes.com
-    teste = "#9C1FBD"
-    teste1 = "#f70d1a"
-    teste2 = "#EEEE0A"
-    teste3 = "#3DEC0A"
+    #teste = "#9C1FBD"
+    #teste1 = "#f70d1a"
+    #teste2 = "#EEEE0A"
+    #teste3 = "#3DEC0A"
     #Alarmes UFF
     # Alarme ACeT 
     # Alarme U123
+    alarmeUFF_ACeT = of.alarme_ACeT(df_UFF)
     alarmeUFF_U123 = of.alarme_U123(df_UFF, 30, 10, -6, "Umidade3")
 
     #Alarmes Jurujuba L1
     # Alarme ACeT 
     # Alarme U123
+    alarmeJL1_ACeT = of.alarme_ACeT(df_Jurujuba_L1)
     alarmeJL1_U123 = of.alarme_U123(df_Jurujuba_L1, 30, 10, -6, "Umidade3")
 
     #Alarmes Jurujuba L2
     # Alarme ACeT 
     # Alarme U123
+    alarmeJL2_ACeT = of.alarme_ACeT(df_Jurujuba_L2)
     alarmeJL2_U123 = of.alarme_U123(df_Jurujuba_L2, 30, 10, -6, "Umidade3")
 
     #Alarmes Jurujuba L3
     # Alarme ACeT 
     # Alarme U123
+    alarmeJL3_ACeT = of.alarme_ACeT(df_Jurujuba_L3)
     alarmeJL3_U123 = of.alarme_U123(df_Jurujuba_L3, 30, 10, -6, "Umidade3")
 
     #Alarmes Local1
     # Alarme ACeT 
     # Alarme U123
+    alarmeL1_ACeT = of.alarme_ACeT(df_Local_1)
     alarmeL1_U123 = of.alarme_U123(df_Local_1, 30, 10, -6, "Umidade3")
 
     #Alarmes Local2
     # Alarme ACeT 
     # Alarme U123
+    alarmeL2_ACeT = of.alarme_ACeT(df_Local_2)
     alarmeL2_U123 = of.alarme_U123(df_Local_2, 30, 10, -6, "Umidade3")
 
     #Alarmes Local3
     # Alarme ACeT 
     # Alarme U123
+    alarmeL3_ACeT = of.alarme_ACeT(df_Local_3)
     alarmeL3_U123 = of.alarme_U123(df_Local_3, 30, 10, -6, "Umidade3")
 
     #Alarmes Local4
     # Alarme ACeT 
     # Alarme U123
+    alarmeL4_ACeT = of.alarme_ACeT(df_Local_4)
     alarmeL4_U123 = of.alarme_U123(df_Local_4, 30, 10, -6, "Umidade3")
 
     #Alarmes Local5
     # Alarme ACeT 
     # Alarme U123
+    alarmeL5_ACeT = of.alarme_ACeT(df_Local_5)
     alarmeL5_U123 = of.alarme_U123(df_Local_5, 30, 10, -6, "Umidade3")
 
     #Alarmes Local6
     # Alarme ACeT 
     # Alarme U123
+    alarmeL6_ACeT = of.alarme_ACeT(df_Local_6)
     alarmeL6_U123 = of.alarme_U123(df_Local_6, 30, 10, -6, "Umidade3")
 
     #Alarmes Local7
     # Alarme ACeT 
     # Alarme U123
+    alarmeL7_ACeT = of.alarme_ACeT(df_Local_7)
     alarmeL7_U123 = of.alarme_U123(df_Local_7, 30, 10, -6, "Umidade3")
 
     #Alarmes Local8
     # Alarme ACeT 
     # Alarme U123
+    alarmeL8_ACeT = of.alarme_ACeT(df_Local_8)
     alarmeL8_U123 = of.alarme_U123(df_Local_8, 30, 10, -6, "Umidade3")
 
     #Alarmes Local9
     # Alarme ACeT 
     # Alarme U123
+    alarmeL9_ACeT = of.alarme_ACeT(df_Local_9)
     alarmeL9_U123 = of.alarme_U123(df_Local_9, 30, 10, -6, "Umidade3")
 
     #Alarmes Local10
     # Alarme ACeT 
     # Alarme U123
+    alarmeL10_ACeT = of.alarme_ACeT(df_Local_10)
     alarmeL10_U123 = of.alarme_U123(df_Local_10, 30, 10, -6, "Umidade3")
 
     fig_mapa = px.scatter_mapbox(alerta_df, lat="latitude", lon="longitude", zoom=(int(11)),
@@ -173,20 +187,20 @@ def grafico_df_mapa(alerta_df):
                                  color="Sinais de Alerta", 
                                  opacity=[1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7,1,0.7],
                                  #       text=["UFF","Jurujuba 1", "Jurujuba 2"],
-                                 color_discrete_map={"UFF ACeT": teste, "UFF U123": alarmeUFF_U123,
-                                                     "Jurujuba1 ACeT": teste2, "Jurujuba1 U123": alarmeJL1_U123,
-                                                     "Jurujuba2 ACeT": teste1, "Jurujuba2 U123": alarmeJL2_U123,
-                                                     "Jurujuba3 ACeT": teste, "Jurujuba3 U123": alarmeJL3_U123,
-                                                     "Local1 ACeT": teste1, "Local1 U123": alarmeL1_U123,
-                                                     "Local2 ACeT": teste2, "Local2 U123": alarmeL2_U123,
-                                                     "Local3 ACeT": teste3, "Local3 U123": alarmeL3_U123,
-                                                     "Local4 ACeT": teste1, "Local4 U123": alarmeL4_U123,
-                                                     "Local5 ACeT": teste2, "Local5 U123": alarmeL5_U123,
-                                                     "Local6 ACeT": teste3, "Local6 U123": alarmeL6_U123,
-                                                     "Local7 ACeT": teste1, "Local7 U123": alarmeL7_U123,
-                                                     "Local8 ACeT": teste2, "Local8 U123": alarmeL8_U123,
-                                                     "Local9 ACeT": teste3, "Local9 U123": alarmeL9_U123,
-                                                     "Local10 ACeT": teste, "Local10 U123": alarmeL10_U123})
+                                 color_discrete_map={"UFF ACeT": alarmeUFF_ACeT, "UFF U123": alarmeUFF_U123,
+                                                     "Jurujuba1 ACeT": alarmeJL1_ACeT, "Jurujuba1 U123": alarmeJL1_U123,
+                                                     "Jurujuba2 ACeT": alarmeJL2_ACeT, "Jurujuba2 U123": alarmeJL2_U123,
+                                                     "Jurujuba3 ACeT": alarmeJL3_ACeT, "Jurujuba3 U123": alarmeJL3_U123,
+                                                     "Local1 ACeT": alarmeL1_ACeT, "Local1 U123": alarmeL1_U123,
+                                                     "Local2 ACeT": alarmeL2_ACeT, "Local2 U123": alarmeL2_U123,
+                                                     "Local3 ACeT": alarmeL3_ACeT, "Local3 U123": alarmeL3_U123,
+                                                     "Local4 ACeT": alarmeL4_ACeT, "Local4 U123": alarmeL4_U123,
+                                                     "Local5 ACeT": alarmeL5_ACeT, "Local5 U123": alarmeL5_U123,
+                                                     "Local6 ACeT": alarmeL6_ACeT, "Local6 U123": alarmeL6_U123,
+                                                     "Local7 ACeT": alarmeL7_ACeT, "Local7 U123": alarmeL7_U123,
+                                                     "Local8 ACeT": alarmeL8_ACeT, "Local8 U123": alarmeL8_U123,
+                                                     "Local9 ACeT": alarmeL9_ACeT, "Local9 U123": alarmeL9_U123,
+                                                     "Local10 ACeT": alarmeL10_ACeT, "Local10 U123": alarmeL10_U123})
 
     fig_mapa.update_layout(mapbox_style="stamen-terrain")
 
@@ -206,6 +220,7 @@ def alarme_U123(df_UFF, n1_u3, n2_u3, diferença_u3, col_u3):
     ultima_info.loc[((ultima_info[col_u3] >= 50) & (ultima_info[col_u3] <= 100)), "cor"] = "#f70d1a" #vermelho
     ultima_info.loc[((ultima_info[col_u3] > 100) & (ultima_info[col_u3] <= 200)), "cor"] = "#EEEE0A" #amarelo
     ultima_info.loc[ultima_info[col_u3] > 200, "cor"] = "#3DEC0A" #verde
+    ultima_info.loc[ultima_info[col_u3] == 0, "cor"] = "#808080" #cinza
 
     #Pega a cor correspondente ao alarme de acordo com os valores avaliados a cima.
 
@@ -227,3 +242,41 @@ def alarme_U123(df_UFF, n1_u3, n2_u3, diferença_u3, col_u3):
             valor = "#9C1FBD"
     
     return valor
+
+def alarme_ACeT(df_UFF, col_Ax="Ax", col_Ay="Ay", col_Az="Az"):
+    #df_UFF -> DataFrame tratado na primeira função
+    #col_Ax -> corresponde a coluna de "Ax" (pode ser que posteriormente algo mude aqui ou em todo resto)
+    #col_Ay -> corresponde a coluna de "Ay"
+    #col_Az -> corresponde a coluna de "Az"
+    ultima_info = df_UFF.tail(1)
+    penultima_info = df_UFF.iloc[-2:-1]
+
+    info_Ax = ultima_info[col_Ax].values
+    info_Ay = ultima_info[col_Ay].values
+    info_Az = ultima_info[col_Az].values
+    
+    info_Az_teste = penultima_info[col_Az].values
+
+    z = abs(info_Az_teste - info_Az)
+
+    resposta = ((info_Ax**2) + (info_Ay**2) + (info_Az**2))**(1/2)
+
+    if ((resposta > (16000 * 0.85)) and (resposta < (16000 * 1.15))):
+        valor_AC = "#3DEC0A" #verde
+        
+    elif (((resposta <= (16000 * 0.85)) and (resposta > (16000 * 0.80))) or ((resposta >= (16000 * 1.15)) and (resposta < (16000 * 1.20)))):
+        valor_AC = "#EEEE0A" #amarelo
+        
+    elif (((resposta <= (16000 * 0.80)) and (resposta > (16000 * 0.70))) or ((resposta >= (16000 * 1.20)) and (resposta < (16000 * 1.30)))):
+        valor_AC = "#f70d1a" #vermelho
+        
+    elif ((resposta <= (16000 * 0.70)) or (resposta >= (16000 * 1.30))):
+        valor_AC = "#9C1FBD" #roxo
+        
+    if ((z <= (info_Az_teste * 0.95)) or (z >= (info_Az_teste * 1.05))): #Pressupondo que se o eixo Z estiver em movimento o deslizamento já está prestes a ocorrer
+        valor_AC = "#9C1FBD" #roxo
+        
+    if ((resposta == (3**(1/2))) or (resposta == 0)):
+        valor_AC = "#808080" #cinza
+
+    return valor_AC
