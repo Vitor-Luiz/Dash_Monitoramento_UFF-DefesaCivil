@@ -4,7 +4,7 @@ sensores em tempo real, um sinal de alarme é emitido na plataforma. Projeto em 
 
 A implantação do Dash é executada pelo Elastic Beanstalk por meio da free tier do AWS da Amazon.
 
-http://dashmonitoramentouff-env.eba-csrm9z2j.sa-east-1.elasticbeanstalk.com/
+http://dashmonitoramentouff-env.eba-r5hffikc.sa-east-1.elasticbeanstalk.com/
 
 Monitoring Dash! 
 
@@ -12,4 +12,4 @@ This code has the purpose of creating a Dash for real-time monitoring of acceler
 
 Dash deployment is performed by Elastic Beanstalk through Amazon's AWS free tier.
 
-http://dashmonitoramentouff-env.eba-csrm9z2j.sa-east-1.elasticbeanstalk.com/
+http://dashmonitoramentouff-env.eba-r5hffikc.sa-east-1.elasticbeanstalk.com/
